@@ -9,10 +9,14 @@ const Users = db.define(
       autoIncrement: true,
       allowNull: false,
     },
-    id_user: {
-      type: Sequelize.INTEGER,
+    full_name: {
+      type: Sequelize.CHAR,
       allowNull: false,
       primaryKey: true,
+    },
+    passport_data: {
+      type: Sequelize.CHAR,
+      allowNull: false,
     },
   },
   {

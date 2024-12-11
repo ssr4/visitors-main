@@ -7,15 +7,14 @@ const express = require("express"),
 
 // тут обернуть в errorHandler можно
 router.use(async (req, res, next) => {
-  let data = await usersService.getUsers()
-  console.log(data)
   // сразу при  инициализации получаем всех юзеров
+  let data = await UsersService.getUsers()
   if (data) {
     req.users = data
     next()
   } else res.status(500).send({ message: "Error while getting users" })
 })
 
-router.route("/").get(UsersController.getUsers)
+router.route("/").get(UsersController.getUsers).post(UsersController.createUser)
 
 module.exports = router

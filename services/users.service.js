@@ -15,6 +15,43 @@ class UsersService {
       }
     })
   }
+
+  createUser(data) {
+    return new Promise((res, rej) => {
+      try {
+        const users = Users.create({
+          full_name: data.fullName,
+          passport_data: data.passport,
+        })
+        res(users)
+      } catch (error) {
+        console.log(error)
+        rej(error)
+      }
+    })
+  }
+
+  updateUser(data) {
+    return new Promise((res, rej) => {
+      try {
+        const users = Users.update(
+          {
+            full_name: data.fullName,
+          },
+          {
+            where: {
+              passport_data: data.passport,
+            },
+          }
+        )
+        console.log(users, data)
+        res(users)
+      } catch (error) {
+        console.log(error)
+        rej(error)
+      }
+    })
+  }
 }
 
 module.exports = new UsersService()

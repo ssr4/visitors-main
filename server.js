@@ -1,34 +1,23 @@
 const express = require("express"),
   app = express(),
   routes = require("./routes/index.js")
+const path = require("path")
+
 const bodyParser = require("body-parser")
-// const path = require("path")
 const db = require("./controllers/db.js")
-const Users = require("./models/Users.js")
 const PORT = 5000
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use("/api", routes)
+app.use(express.static(path.join(__dirname, "public")))
+
 // Настройка статической папки
-// app.use(express.static(path.join(__dirname, "public")))
-
-// app.post("/", async (req, res) => {
-//   try {
-//     const { id_user } = req.body
-//     const user = await Users.create({ id_user: id_user })
-//     res.json(user)
-//   } catch (err) {
-//     console.log(err)
-//     res.status(500).json(err)
-//   }
-// })
-
 async function startApp() {
   try {
     app.listen(PORT, () => console.log(`Сервер запущен на порту ${PORT}`))
     await db.authenticate()
   } catch (err) {
-    console.log("Error ", err)
+    console.log(err)
   }
 }
 
