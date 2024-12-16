@@ -4,191 +4,203 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PassCard</title>
-    <link rel="stylesheet" href="./styles/slyle.css" />
-    <link rel="stylesheet" href="./styles/global.css" />
-    <script src="App.js" defer></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/inputSection.css" />
+    <link rel="stylesheet" href="./styles/buttonStyle.css" />
+    <link rel="stylesheet" href="./styles/dialogStyle.css" />
+    <script type="module" src="App.js" defer></script>
+    <script type="module" src="test.js" defer></script>
   </head>
 
   <body>
     <header class="header">
-      <p class="header-title">Пропуск</p>
-      <nav class="nav">
-        <ul class="menu">
-          <li class="menu-item">
-            <a class="menu-item-link" href="#form">Форма</a>
-          </li>
-          <li class="menu-item">
-            <a class="menu-item-link" href="#contacts">Контакты</a>
-          </li>
-        </ul>
-      </nav>
+      <p class="header-title"><img id="logo" src="../images/id-card.png" alt=""> Электронный <br>Пропуск</p>
+      <div id="header-links">
+        <a class="menu-item-link" href="#form">Форма</a>
+        <a class="menu-item-link" href="#contacts">Контакты</a>
+      </div>
     </header>
+
     <section class="hero-section section">
       <div class="hero-container">
-        <h1 class="title">Получи пропуск в СПБ ИВЦ онлайн</h1>
+        <img id="hero-image" src="../images/cover.png" alt="">
+        <h1 class="title">Получи электронный пропуск в СПБ ИВЦ онлайн</h1>
         <p class="text">
-          Наш сайт предлагает удобный и быстрый способ получения пропусков.
+          Наш сайт предлагает удобный и быстрый способ получения электронных пропусков.
           Просто заполните форму на сайте и мы поможем вам оформить пропуск в
           кратчайшие сроки.
         </p>
       </div>
     </section>
+
     <section class="info-section section">
-      <img class="info-img" src="./images/help.png" />
       <div class="info-text">
-        <h2 class="section-title">Для чего нужен пропуск?</h2>
+        <h2 class="section-title">Для чего нужен электронный пропуск?</h2>
         <p>
-          Пропуск в Санкт-Петербургский информационно-вычислительный центр
+          Электронный пропуск в Санкт-Петербургский информационно-вычислительный центр
           используется для входа в здание и доступа к ресурсам. Он служит для
           контроля передвижения людей, ограничения доступа посторонних и
           поддержания безопасности на рабочем месте.
         </p>
       </div>
     </section>
+
     <section class="form-section section" id="form">
-      <h2 class="section-title">Форма-заявка на получение пропуска</h2>
+      <h2 class="section-title">Форма-заявка на получение электронного пропуска</h2>
       <form class="form" action="/submit" method="post">
-        <label class="label">
-          <span>Введите ФИО</span>
-          <input
+        <label class="label" for="full-name">
+          <span>Введите ФИО:</span>
+        </label>
+        <input
             class="input"
             type="text"
             id="full-name"
             name="full-name"
             required
-          />
-        </label>
+        />
 
         <label class="label" for="passport">
           <span>Серия и номер паспорта:</span>
-          <input
+        </label>
+        <input
             class="input"
             type="text"
             id="passport"
             name="passport"
             required
-          />
-        </label>
+        />
 
         <label class="label" for="passport-place">
           <span>Кем выдан:</span>
-          <input
+        </label>
+        <input
             class="input"
             type="text"
             id="passport-place"
             name="passport-place"
             required
-          />
-        </label>
+        />
 
         <label class="label" for="passport-date">
           <span>Когда выдан:</span>
-          <input
+        </label>
+        <input
             class="input"
             type="date"
             id="passport-date"
             name="passport-date"
             required
-          />
-        </label>
+        />
 
         <label class="label" for="birth-place">
           <span>Место рождения:</span>
-          <input
+        </label>
+        <input
             class="input"
             type="text"
             id="birth-place"
             name="birth-place"
             required
-          />
-        </label>
+        />
 
         <label class="label" for="birth-date">
           <span>Дата рождения:</span>
-          <input
+        </label>
+        <input
             class="input"
             type="date"
             id="birth-date"
             name="birth-date"
             required
-          />
-        </label>
+        />
 
         <label class="label" for="residence">
-          <span>Место жительства</span>
-          <input
+          <span>Место жительства:</span>
+        </label>
+        <input
             class="input"
-            type="tel"
+            type="text"
             id="residence"
             name="residence"
             required
-          />
-        </label>
+        />
 
         <label class="label" for="department">
-          <span>Отдел</span>
-          <select class="select" id="department" name="department" required>
-            <option class="select-option">ИНФОРМ</option>
-            <option class="select-option">СТО</option>
-            <option class="select-option">ЭИТИ</option>
-          </select>
+          <span>Отдел:</span>
         </label>
+        <select class="select" id="department" name="department" required>
+          <option class="select-option">ИНФОРМ</option>
+          <option class="select-option">СТО</option>
+          <option class="select-option">ЭИТИ</option>
+        </select>
 
         <label class="label" for="job">
-          <span>Должность</span>
-          <input class="input" type="tel" id="job" name="job" required />
+          <span>Должность:</span>
         </label>
+        <input class="input" type="tel" id="job" name="job" required />
 
         <label class="label" for="purpose">
           <span>Цель пребывания:</span>
-          <select class="select" id="purpose" name="purpose" required>
-            <option class="select-option" value="business">
-              Деловая встреча
-            </option>
-            <option class="select-option" value="personal">
-              Личное посещение
-            </option>
-            <option class="select-option" value="delivery">Доставка</option>
-          </select>
         </label>
+        <select class="select" id="purpose" name="purpose" required>
+          <option class="select-option" value="business">
+            Деловая встреча
+          </option>
+          <option class="select-option" value="personal">
+            Личное посещение
+          </option>
+          <option class="select-option" value="delivery">Доставка</option>
+        </select>
 
         <label class="label" for="visit-date">
           <span>Дата визита:</span>
-          <input
+        </label>
+        <input
             class="input"
             type="date"
             id="visit-date"
             name="visit-date"
             required
-          />
-        </label>
+        />
 
         <label class="label" for="attendant">
           <span>Сопровождающий:</span>
-          <select class="select" id="attendant" name="attendant" required>
-            <option class="select-option" value="employee1">Сотрудник 1</option>
-            <option class="select-option" value="employee2">Сотрудник 2</option>
-            <option class="select-option" value="employee3">Сотрудник 3</option>
-          </select>
         </label>
+        <select class="select" id="attendant" name="attendant" required>
+          <option class="select-option" value="employee1">Сотрудник 1</option>
+          <option class="select-option" value="employee2">Сотрудник 2</option>
+          <option class="select-option" value="employee3">Сотрудник 3</option>
+        </select>
 
         <label class="label" for="coordinator">
           <span>Согласующий:</span>
-          <select class="select" id="coordinator" name="coordinator" required>
-            <option class="select-option" value="boss1">Нальник ИНФОРМ</option>
-            <option class="select-option" value="boss2">Нальник СТО</option>
-            <option class="select-option" value="boss3">Нальник ЭИТИ</option>
-          </select>
         </label>
+        <select class="select" id="coordinator" name="coordinator" required>
+          <option class="select-option" value="boss1">Нальник ИНФОРМ</option>
+          <option class="select-option" value="boss2">Нальник СТО</option>
+          <option class="select-option" value="boss3">Нальник ЭИТИ</option>
+        </select>
 
-        <button class="button submit" type="submit">Отправить</button>
-        <button class="button reset" type="reset">Очистить</button>
+        <button class="button submit" id="submit-btn" type="submit">Отправить</button>
+        <button class="button reset" id="clear-form-btn" type="reset">Очистить</button>
       </form>
     </section>
+
     <footer class="footer" id="contacts">
       <a class="link" href="mailto:test@email.com">test@email.com</a>
       <address>Санкт-Петербург, ул. Боровая, д. 57</address>
       <a class="link" href="tel:+79991112233">+79991112233</a>
     </footer>
+    
+
+    <dialog id="form-sent-dialog">
+      <button id="close-btn">
+        <img id="close-icon" src="../images/close.svg" alt="">
+      </button>
+
+      <p id="dialog-text">Ваша заявка отправлена!</p>
+    </dialog>
+
   </body>
 </html>

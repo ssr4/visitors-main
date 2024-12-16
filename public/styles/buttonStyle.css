@@ -1,0 +1,65 @@
+#submit-btn{
+    
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+    background: #ff0606;
+    border: none;
+    font-size: 14px;
+    height: 31px;
+    text-align: center;
+    width: 100%;
+    
+    font-weight: 500;
+    color: white;
+
+    margin-top: 15px;
+    
+}
+
+#submit-btn:hover{
+    background: #b80a0a;
+}
+
+
+#clear-form-btn{
+    
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+    background: #FFF;
+    border: none;
+    font-size: 14px;
+    height: 31px;
+    text-align: center;
+    font-weight: 400;
+    color: #0F1111;
+
+    margin-top: 10px;
+    
+}
+
+#clear-form-btn:hover{
+    background-color: #e6e6e6;
+}
+
+#submit-btn, #clear-form-btn{
+    margin-right: auto;
+    margin-left: auto;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+@media (max-width: 700px){
+    #submit-btn, #clear-form-btn{
+        margin-right:  auto;
+        margin-left: auto;
+        min-width: 200px;
+        max-width: 200px;
+    }
+    
+}
